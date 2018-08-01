@@ -7,9 +7,9 @@ const Comment = new Schema({
     type: Date,
     default: Date.now()
   },
-  author: {
+  character: {
     type: Schema.Types.ObjectId,
-    ref: "User"
+    ref: "Scent"
   }
 });
 
@@ -19,9 +19,9 @@ const Scent = new Schema({
     type: Date,
     default: Date.now()
   },
-  author: {
+  character: {
     type: Schema.Types.ObjectId,
-    ref: "User"
+    ref: "Scent"
   },
   comments: [Comment]
 });
@@ -32,9 +32,9 @@ const User = new Schema({
     type: Date,
     default: Date.now()
   },
-  author: {
+   character: {
     type: Schema.Types.ObjectId,
-    ref: "User"
+    ref: "Scent"
   },
   comments: [Comment]
   });

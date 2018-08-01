@@ -1,51 +1,48 @@
 const User = require("../models/User");
 const  { Scent }  = require('../models/Scent');
-const seedData = require("./seeds.json");
 
-Scent.find({}).remove(() => {
-  Comment.find({}).remove(() => {
-    let diesel = Scent.create({
+User.find({}).remove(() => {
+  Scent.find({}).remove(() => {
+    let diesel = User.create({
       local: {
-        type: "gasoline"
+        character: "gasoline"
       }
-    }).then(scent => {
+    }).then(user => {
       Promise.all([
         Scent.create({
           content: "For those who like it old school"
-        }).then(comment => {
-          scent.push(comment);
+        }).then(scent => {
+          user.scents.push(scent);
         }),
         Scent.create({
           content: "All squared away"
-        }).then(comment => {
-          scent.push(comment);
+        }).then(scent => {
+          user.scents.push(scent);
         })
       ]).then(() => {
-        scent.save(err => console.log(err));
+        user.save(err => console.log(err));
       });
     });
 
-    let honeybbq = Scent.create({
+    let honeybbq = User.create({
       local: {
-        type: "sauces"
+        character: "sauces"
       }
-    }).then(scent => {
+    }).then(user => {
       Promise.all([
         Scent.create({
           content: "Homemade and perfect for braising"
-        }).then(tweet => {
-          scent.push(comment);
+        }).then(scent => {
+          user.scents.push(comment);
         }),
         Scent.create({
           content: "Finger lickable all year round"
         }).then(scent => {
-          scent.push(scent);
+          user.scents.push(scent);
         })
       ]).then(() => {
         scent.save(err => console.log(err));
       });
     });
-    
-    })
-  })
-})
+  });
+});
