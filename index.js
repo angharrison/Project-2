@@ -7,6 +7,7 @@ app.use(express.static("public"));
 app.set("view engine", "hbs");
 
 app.use(require("./routes/index.js"));
+app.use(require("./routes/scent.js"));
 
 
 app.listen(5500, () => console.log("It's alive!"));

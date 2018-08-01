@@ -1,19 +1,21 @@
-const { Scent, Comment } = require("../models/Scent");
+const Scent  = require("../models/Scent");
 const User = require("../models/User");
 
 module.exports = {
   show: (req, res) => {
-    Scent.findOne({ _id: req.params.id })
-      .populate("character")
-      .exec(function(err, scent) {
-        Comment.populate(scent.comments, { path: "character" }, function(
-          err,
-          comments
-        ) {
-          scent.comments = comments;
-          res.render("scent/show", scent);
-        });
-      });
+    res.render("scent")
+    // Scent.findOne({ _id: req.params.id })
+    //   .populate("character")
+    //   .exec(function(err, scent) {
+    //     Comment.populate(scent.comments, { path: "character" }, function(
+    //       err,
+    //       comments
+    //     ) {
+    //       scent.comments = comments;
+    //       res.render("scent/show", scent);
+    //     });
+    //   });
+
   },
   new: (req, res) => {
     User.find({}).then(users => {
@@ -36,13 +38,13 @@ module.exports = {
   },
   update: (req, res) => {
     let { content, character } = req.body;
-    Tweet.findOne({ _id: req.params.id }).then(tweet => {
-      tweet.comments.push({
+    Scent.findOne({ _id: req.params.id }).then(scent => {
+      scent.comments.push({
         content,
         character
       });
-      tweet.save(err => {
-        res.redirect(`/tweet/${tweet._id}`);
+      scent.save(err => {
+        res.redirect(`/scent/${scent._id}`);
       });
     });
   },

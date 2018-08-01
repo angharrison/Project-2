@@ -13,18 +13,34 @@ const Schema = mongoose.Schema;
 //   }
 // });
 //
-// const Scent = new Schema({
-//   content: String,
-//   createdAt: {
-//     type: Date,
-//     default: Date.now()
+const Scent = new Schema({
+    character: String,
+    type: String,
+    content: String
+  });
+
+module.exports = mongoose.model("Scent", Scent)
+
+//     "character": "honeybbq",
+//     "type": "sauce",
+//     "content": "Finger lickable all year round"
 //   },
-//   character: {
-//     type: Schema.Types.ObjectId,
-//     ref: "User"
-//   },
-//   comments: [Comment]
+//   {
+//     "character": "Jasmine",
+//     "type": "herb",
+//     "content": "Relaxingly fragrant to induce a loving vibe"
+//   }
 // });
+
+// const Scent = new Schema({
+//   cont: String
+// });
+
+// db.scentall.insert(
+//   {
+//     "cont": "Diesel"
+//   }
+// )
 //
 // const User = new Schema({
 //   content: String,
@@ -46,4 +62,3 @@ const Schema = mongoose.Schema;
 // };
 //
 //
-// // module.exports = mongoose.model("Scent", Scent)
