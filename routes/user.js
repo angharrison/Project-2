@@ -3,8 +3,8 @@ const router = express.Router();
 const userController = require("../controllers/user.js");
 
 
-router.get("/new", scentController.new);
-router.get("/:id", scentController.show);
-router.post("/", scentController.create);
+router.get("/new", userController.new);
+router.get("/:id", userController.show);
+router.post("/", userController.create);
 
 module.exports = router;

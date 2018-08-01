@@ -1,32 +1,17 @@
 const mongoose = require("../db/connection");
 const Schema = mongoose.Schema;
-
-// const Comment = new Schema({
-//   content: String,
-//   createdAt: {
-//     type: Date,
-//     default: Date.now()
+//
+// const User = new Schema({
+//   local: {
+//     email: String,
+//     password: String
 //   },
-//   author: {
-//     type: Schema.Types.ObjectId,
-//     ref: "User"
-//   }
+//   tweets: [
+//     {
+//       type: Schema.Types.ObjectId,
+//       ref: "Tweet"
+//     }
+//   ]
 // });
-
-// const Scent = new Schema({
-//   content: String,
-//   createdAt: {
-//     type: Date,
-//     default: Date.now()
-//   },
-//   author: {
-//     type: Schema.Types.ObjectId,
-//     ref: "User"
-//   },
-//   comments: [Comment]
-// });
-
-// module.exports = mongoose.model("User", User)
-//   Scent: mongoose.model("Scent", Scent),
-//   Comment: mongoose.model("Comment", Comment)
-// };
+//
+// module.exports = mongoose.model("User", User);

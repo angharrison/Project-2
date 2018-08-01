@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const { Scent } = require("../models/Scent");
 
-/*
+
 module.exports = {
   show: (req, res) => {
     User.findOne({ _id: req.params.id })
@@ -27,4 +27,3 @@ module.exports = {
     });
   }
 };
-*/

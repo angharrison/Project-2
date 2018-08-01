@@ -1,0 +1,12 @@
+<section class="profile">
+  <h2>{{user.local.character}}</h2>
+  {{#if user.scents}}
+    <div class="scents">
+      {{#each user.scents}}
+         {{> 'scent'}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p>No Scents yet</p>
+  {{/if}}
+</section>

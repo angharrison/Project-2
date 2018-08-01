@@ -1,6 +1,6 @@
 const { Scent, Comment } = require("../models/Scent");
 const User = require("../models/User");
-/*
+
 module.exports = {
   show: (req, res) => {
     Scent.findOne({ _id: req.params.id })
@@ -20,6 +20,7 @@ module.exports = {
       res.render("scent/new", { users });
     });
   },
+
   create: (req, res) => {
     Scent.create({
       content: req.body.scent.content,
@@ -51,4 +52,3 @@ module.exports = {
     })
   }
 };
-*/
