@@ -1,0 +1,27 @@
+<!-- {{#if tweets}}
+  <ul class="tweets">
+    {{#each tweets}}
+       {{> 'tweet'}}
+    {{/each}}
+  </ul>
+{{/if}} -->
+
+
+{{#if tweets}}
+  <ul class="scents">
+    {{#each scents}}
+      <div class="card">
+        <div class="card-content">
+          <a class="card-title" href="/scent/{{id}}">
+            {{ content }}
+          </a>
+        </div>
+        <div class="card-action">
+          <a href="/user/{{ character.id }}" class="">{{ character.local }}</a>
+          <span class="scent__date">{{ createdAt }}</span>
+          <span class="scent_comments">{{ comments.length }} Comments</span>
+        </div>
+      </div>
+    {{/each}}
+  </ul>
+{{/if}}
