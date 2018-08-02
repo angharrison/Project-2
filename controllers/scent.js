@@ -3,18 +3,18 @@ const User = require("../models/User");
 
 module.exports = {
   show: (req, res) => {
-    res.render("scent")
-    // Scent.findOne({ _id: req.params.id })
-    //   .populate("character")
-    //   .exec(function(err, scent) {
-    //     Comment.populate(scent.comments, { path: "character" }, function(
-    //       err,
-    //       comments
-    //     ) {
-    //       scent.comments = comments;
-    //       res.render("scent/show", scent);
-    //     });
-    //   });
+    res.render("scent/scent")
+    Scent.findOne({ _id: req.params.id })
+      .populate("character")
+      .exec(function(err, scent) {
+        Comment.populate(scent.comments, { path: "character" }, function(
+          err,
+          comments
+        ) {
+          scent.comments = comments;
+          res.render("scent/show", scent);
+        });
+      });
 
   },
   new: (req, res) => {
