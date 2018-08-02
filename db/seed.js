@@ -16,7 +16,8 @@ User.find({}).remove(() => {
           user.scents.push(scent);
         }),
         Scent.create({
-          content: "All squared away"
+          content: "All squared away",
+          image: "../images/candles-2000135_1280.jpg"
         }).then(scent => {
           user.scents.push(scent);
         })
@@ -34,6 +35,7 @@ User.find({}).remove(() => {
       Promise.all([
         Scent.create({
           content: "Homemade and perfect for braising"
+          
         }).then(scent => {
           user.scents.push(comment);
         }),

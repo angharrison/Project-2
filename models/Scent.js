@@ -1,5 +1,16 @@
 const mongoose = require("../db/connection");
 const Schema = mongoose.Schema;
+
+const Scent = new Schema({
+    character: String,
+    type: String,
+    content: String,
+    image: String
+  });
+
+module.exports = mongoose.model("Scent", Scent)
+
+
 //
 // const Comment = new Schema({
 //   content: String,
@@ -13,14 +24,6 @@ const Schema = mongoose.Schema;
 //   }
 // });
 //
-const Scent = new Schema({
-    character: String,
-    type: String,
-    content: String
-  });
-
-module.exports = mongoose.model("Scent", Scent)
-
 //     "character": "honeybbq",
 //     "type": "sauce",
 //     "content": "Finger lickable all year round"

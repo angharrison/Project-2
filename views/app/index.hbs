@@ -8,8 +8,11 @@
 
 
 {{#if scents}}
-  <ul class="scents">
+  <div class="scents">
     {{#each scents}}
+    <div class="scent-image">
+      <img src= {{ image }} alt= {{ name }} >
+    </div>
       <div class="card">
         <div class="card-content">
           <a class="card-title" href="/scent/{{id}}">
@@ -23,5 +26,5 @@
         </div>
       </div>
     {{/each}}
-  </ul>
+  </div>
 {{/if}}
