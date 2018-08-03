@@ -1,9 +1,9 @@
 <section class="profile">
-  <h2>{{user.local.character}}</h2>
+  <h2>{{user.local.email}}</h2>
   {{#if user.scents}}
-    <div class="users">
+    <div class="scents">
       {{#each user.scents}}
-         {{> 'user'}}
+         {{> 'scent'}}
       {{/each}}
     </div>
   {{else}}

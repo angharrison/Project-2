@@ -3,8 +3,8 @@ const User = require("../models/User");
 
 module.exports = {
   show: (req, res) => {
-    console.log("scent/scent")
-    res.render("scent/scent")
+    // console.log("scent/new")
+    res.render("scent/new")
     // Scent.findOne({ _id: req.params.id })
     //   .populate("character")
     //   .exec(function(err, scent) {
@@ -19,14 +19,14 @@ module.exports = {
 
   },
   new: (req, res) => {
-    console.log("scent/new")
+    // console.log("scent/new")
     User.find({}).then(users => {
       res.render("scent/new", { users });
     });
   },
 
   create: (req, res) => {
-    console.log("scent/new")
+    // console.log("scent/new")
     Scent.create({
       content: req.body.scent.content,
       character: req.body.scent.character,
@@ -40,7 +40,7 @@ module.exports = {
     });
   },
   update: (req, res) => {
-    console.log("scent/new")
+    // console.log("scent/new")
     let { content, character } = req.body;
     Scent.findOne({ _id: req.params.id }).then(scent => {
       scent.push({
@@ -53,7 +53,7 @@ module.exports = {
     });
   },
   delete: (req, res) => {
-    console.log("scent/new")
+    // console.log("scent/new")
     Scent.findOneAndRemove({ _id: req.params.id }).then(scent => {
       res.redirect('/')
     })

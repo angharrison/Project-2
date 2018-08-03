@@ -7,7 +7,7 @@ module.exports = {
     // console.log("user/new")
     User.findOne({ _id: req.params.id })
       .populate({
-        path: "users",
+        path: "scents",
         options: { limit: 5, sort: { createdAt: -1 } }
       })
       .then(user => {
@@ -22,8 +22,8 @@ module.exports = {
     // console.log("user/create")
     User.create({
       local: {
-        character: req.body.character,
-        content: req.body.content
+        character: req.body.email,
+        content: req.body.password
       }
     }).then(user => {
       res.redirect(`/user/${user._id}`);

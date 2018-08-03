@@ -10,6 +10,7 @@ const User = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: "Scent"
+      // image: String
     }
   ]
 });
