@@ -35,9 +35,9 @@ User.find({}).remove(() => {
       Promise.all([
         Scent.create({
           content: "Homemade and perfect for braising"
-          
+
         }).then(scent => {
-          user.scents.push(comment);
+          user.scents.push(scent);
         }),
         Scent.create({
           content: "Finger lickable all year round"
