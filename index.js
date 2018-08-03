@@ -11,4 +11,9 @@ app.use(require("./routes/index.js"));
 app.use(express.static('public/images')) //make img folder use
 app.use(express.static('public/css'))   //link to css folder in public
 
-app.listen(5500, () => console.log("It's alive!"));
+// app.listen(5500, () => console.log("It's alive!"));
+app.set('port', process.env.PORT || 3001)
+
+ app.listen(app.get('port'), () => {
+   console.log(`✅ PORT: ${app.get('port')} 🌟`)
+ })
